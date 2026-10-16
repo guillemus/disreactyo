@@ -1,0 +1,14 @@
+{
+  "$schema": "node_modules/wrangler/config-schema.json",
+  "name": "disreactyo",
+  "main": "worker/index.ts",
+  "compatibility_date": "2026-10-01",
+  "compatibility_flags": ["nodejs_compat"],
+  "assets": { "directory": "./public" },
+  "durable_objects": {
+    "bindings": [{ "name": "DASHBOARD", "class_name": "Dashboard" }]
+  },
+  "migrations": [{ "tag": "v1", "new_sqlite_classes": ["Dashboard"] }],
+  "observability": { "enabled": true },
+  "dev": { "port": 3000 }
+}
